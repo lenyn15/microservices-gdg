@@ -16,5 +16,5 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
-    database-platform: org.mysql.dialect.MySQL5InnoDBDialect
+    database-platform: org.hibernate.mysql.dialect.MySQL5InnoDBDialect
     generate-ddl: true
