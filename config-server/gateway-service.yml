@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8099/eureka/
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: course-service
+          uri: lb://course-service
+          predicates:
+            - Path=/course/**
+            - Path=/teacher/**
+        - id: enrolment-service
+          uri: lb://enrolment-service
+          predicates:
+            - Path=/enrolment/**
+            - Path=/student/**
+
