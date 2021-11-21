@@ -17,10 +17,8 @@ spring:
           uri: lb://course-service
           predicates:
             - Path=/course/**
-            - Path=/teacher/**
         - id: enrolment-service
           uri: lb://enrolment-service
           predicates:
             - Path=/enrolment/**
-            - Path=/student/**
 
